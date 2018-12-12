@@ -3,7 +3,7 @@ var app = express();
 var path = require('path')
 var bodyParser = require('body-parser')
 var nodemailer = require("nodemailer");
-
+var port = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(express.static(__dirname + '/public'))
@@ -44,6 +44,6 @@ let HelperOptions = {
     res.redirect("/");
 })
 })
-app.listen('3000',()=>{
-    console.log('App is listening at port 3000')
+app.listen(port,()=>{
+    console.log(`App is listening at port ${port}`)
 })
