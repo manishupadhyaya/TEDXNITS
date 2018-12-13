@@ -11,13 +11,23 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="js/typed.min.js"></script>
-    <script src="js/rellax.js"></script>
+    <script src="typed.min.js"></script>
+    <script src="rellax.js"></script>
 
 
 </head>
-<body>
+<body >
 
+<div id="loading" style="animation-play-state: running;">
+<div class="loader" style="animation-play-state: running;">
+  <div class="loader__bar" style="animation-play-state: running;"></div>
+  <div class="loader__bar" style="animation-play-state: running;"></div>
+  <div class="loader__bar" style="animation-play-state: running;"></div>
+  <div class="loader__bar" style="animation-play-state: running;"></div>
+  <div class="loader__bar" style="animation-play-state: running;"></div>
+  <div class="loader__ball" style="animation-play-state: running;"></div>
+</div>
+</div>
     
 
 <div id="toppage">
@@ -33,7 +43,7 @@
     </div>
 
 
-    <img src="/images/logo.png" id="logo">
+    <img src="images/logo.png" id="logo">
     <div id="logoside"></div>
     <div id="logoside1"></div>
     <div id="logoside2"></div>
@@ -71,8 +81,6 @@
         $( document ).ready(function() {
           var rellax = new Rellax('.rellax');           
         });
-
-
         
   </script>
 
@@ -80,14 +88,15 @@
   <div id="mainpage" style="display: none;">
 
                         <header id="myHeader" style="height: 12%;">
-                            <a href="/"><img src="/images/logotedx.png" class="log"></a>
+                            <a href="#"><img src="images/logotedx.png" class="log"></a>
                             <input type="checkbox" id="nav-toggle" class="nav-toggle" name="">
                             <nav>
                                 <ul >
                                     <li><a href="#aboutpage" style="font-family: century;">About Us</a></li>
                                     <li><a id="speak" href="#prevspeakers" style="font-family: century;">Archives</a></li>
+                                    <li><a href="#message" style="font-family: century;">NIT Silchar</a></li>
                                     <li><a href="#contact" style="font-family: century;">Contact</a></li>
-                                    <li><a href="#" style="font-family: century;">NIT Silchar</a></li>
+                                    
                                 </ul>
                             </nav>
                             <label for="nav-toggle" class="nav-toggle-label">
@@ -112,7 +121,7 @@
                         </div>
 
                                     <div class='pencil rellax' data-rellax-speed="-1.5">
-                                        <img  src="images/pencil.png" height="100vw" width="100vw">
+                                        <img  src="images/pencil.png" id="pencilimg">
                                 </div>
 
                     <div class="tabs_menu">
@@ -169,10 +178,10 @@
 <div class="previousSpeakers" id="prevspeakers">
 
                             <div class='bulb rellax' data-rellax-speed="-2" >
-                                <img  src="images/bulb.png" height="150vw" width="150vw">
+                                <img  src="images/bulb.png" id="bulbimg">
                         </div>
                         <div class='cam rellax' data-rellax-speed="3">
-                            <img  src="images/cam.png" height="150vw" width="150vw">
+                            <img  src="images/cam.png" id="camimg">
 
                         </div>
                         <script>
@@ -247,6 +256,16 @@
                 <br><br>
                 <hr>
 
+<!-- code for nitsilchar -->
+                <div id="message">
+            <h1>About NIT Silchar:</h1>
+            <hr>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id ex felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed quis dignissim eros, gravida pellentesque urna. Nulla quis nisi in magna malesuada viverra. Fusce nec luctus sapien. Aliquam vel fermentum velit. Vivamus tincidunt sem cursus mi vulputate sodales. Maecenas finibus pulvinar dui at molestie.
+
+Integer pellentesque venenatis dolor, elementum lacinia ipsum iaculis maximus. Morbi pellentesque faucibus sapien a varius. Nam nec convallis ante, et fringilla est. Morbi sagittis eleifend metus, sit amet commodo risus varius a. Quisque dignissim volutpat dui, in posuere purus auctor vel. Nullam et lacus eros. Nunc auctor eros id lacinia molestie. Suspendisse orci massa, fermentum vel mauris non, pulvinar malesuada purus. Phasellus porttitor tellus et arcu sodales, a consequat libero auctor. Donec gravida elementum neque quis pharetra. Aliquam eget maximus mauris. Cras lacus nibh, iaculis sed ultrices at, maximus quis diam. Praesent ultricies ex non placerat blandit.
+            </p>
+        </div>
 
 <div class="previousSpeakers" id="contact">
     <br><br>
@@ -254,10 +273,9 @@
     <br><br><br>
 
     <div class='contactUs'>
-
                                 <div class='form'>
                                     <div class="container">
-                                      <form  method="post" action="https://floating-shelf-15619.herokuapp.com/send-email">
+                                      <form method="post" action="/send-email">
 
                                         <label for="fname">First Name</label><br>
                                         <input type="text" id="fname" name="firstname" placeholder="Your name.."><br>
@@ -272,11 +290,14 @@
                                         <label for="subject">Subject</label><br>
                                         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea><br>
 
-                                        <input type="submit" value="Submit"><br>
+                                        <button type="submit" onclick="appear()" class="fadeButton">Submit</button>
+                                        <br>
+                                        <div id="feedback" style="display:none;">
+                                                <p style="margin-top:-5vh;margin-left: 10vw; font-size: 3.2vh;" class="fade">Thank You. We will be in touch with you soon.</p>
+                                            </div>
                                     </form>
                                 </div>
                             </div>
-
 
                     <div class='map'>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d640.483430791655!2d92.79416709223183!3d24.757025829283737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374e49dcb63bae9b%3A0x81efa836714a289b!2sNational+Institute+Of+Technology%2C+Silchar%2C+Assam!5e0!3m2!1sen!2sin!4v1544472595641" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
@@ -332,13 +353,52 @@
 </div>
 
 
-
+<script>
+    var preloader=document.getElementById('loading');
+    document.body.classList.add('js-loading');
+window.addEventListener("load", showPage);
+function showPage() {
+preloader.style.display='none';
+  document.body.classList.remove('js-loading');
+  setTimeout(function(){
+document.getElementById('mainpage').style.display='block';
+        
+    }, 5000);
+}
+</script>
 
 
 </body>
 <script type="text/javascript" src="js/home.js"></script>
 
 <script>
+
+    var div = document.querySelector(".fade");
+    var btn = document.querySelector(".fadeButton");
+    btn.addEventListener("click", function(){
+    div.classList.add("elementToFadeInAndOut");
+  // Wait until the animation is over and then remove the class, so that
+  // the next click can re-add it.
+    setTimeout(function(){div.classList.remove("elementToFadeInAndOut");}, 4000);
+});
+// <!-- 
+//     function testSubmit()
+// {
+//   var x = document.forms["myForm"]["firstname"];
+//   var y = document.forms["myForm"]["lastname"];
+//   if(x.value =="" || y.value=="")
+//   {
+//     return false;
+//   }
+//   return true;
+// } -->
+        var form = document.getElementById("myForm");
+        form.onsubmit = function(){
+        form.reset();
+      }
+    function appear(){
+            document.getElementById('feedback').style.display="unset";
+    }
     function show1(){
         var i;
         for(i=1;i<=4;i++)

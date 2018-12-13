@@ -3,7 +3,10 @@ var app = express();
 var path = require('path')
 var bodyParser = require('body-parser')
 var nodemailer = require("nodemailer");
+
+
 var port = process.env.PORT || 3000
+
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(express.static(__dirname + '/public'))
@@ -19,7 +22,7 @@ app.post('/send-email',(req,res)=>{
     secure: false,
     port: 25,
     auth:{
-        user: "tedxnits2019@gmail.com",
+        user:"tedxnits2019@gmail.com",
         pass:"tedx@2019"
     },
     tls: {
@@ -34,14 +37,13 @@ let HelperOptions = {
   };
   
   
-  
     transporter.sendMail(HelperOptions, (error, info) => {
       if (error) {
         return console.log(error);
       }
       console.log("The message was sent!");
       console.log(info);
-    res.redirect("/");
+      res.redirect('/')
 })
 })
 app.listen(port,()=>{

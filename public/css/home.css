@@ -1,11 +1,289 @@
 html{
 	scroll-behavior: smooth;
+   height: 100%;
+
 }
 
 body{
 	margin: 0;
 	padding: 0;
 }
+
+
+
+
+/*preloader*/
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
+
+
+#loading{
+	 height: 100vh;
+   background: #010000;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 150;
+   animation-play-state: running !important;
+}
+ .loader {
+   position: relative;
+   width: 75px;
+   height: 100px;
+   animation-play-state: running !important;
+   z-index: 150;
+}
+ .loader__bar {
+   position: absolute;
+   animation-play-state: running !important;
+   bottom: 0;
+   width: 10px;
+   height: 50%;
+   background: #e62b1e;
+   transform-origin: center bottom;
+   box-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+}
+ .loader__bar:nth-child(1) {
+   left: 0px;
+   transform: scale(1, 0.2);
+   animation-play-state: running !important;
+   animation: barUp1 4s infinite;
+}
+ .loader__bar:nth-child(2) {
+   left: 15px;
+   transform: scale(1, 0.4);
+   animation-play-state: running !important;
+   animation: barUp2 4s infinite;
+}
+ .loader__bar:nth-child(3) {
+   left: 30px;
+   transform: scale(1, 0.6);
+   animation-play-state: running !important;
+   animation: barUp3 4s infinite;
+}
+ .loader__bar:nth-child(4) {
+   left: 45px;
+   transform: scale(1, 0.8);
+   animation-play-state: running !important;
+   animation: barUp4 4s infinite;
+}
+ .loader__bar:nth-child(5) {
+   left: 60px;
+   animation-play-state: running !important;
+   transform: scale(1, 1);
+   animation: barUp5 4s infinite;
+}
+ .loader__ball {
+   position: absolute;
+   bottom: 10px;
+   left: 0;
+   width: 10px;
+   height: 10px;
+   background: #fff;
+   border-radius: 50%;
+   animation-play-state: running !important;
+   animation: ball 4s infinite;
+}
+ @keyframes ball {
+   0% {
+     transform: translate(0, 0);
+  }
+   5% {
+     transform: translate(8px, -14px);
+  }
+   10% {
+     transform: translate(15px, -10px);
+  }
+   17% {
+     transform: translate(23px, -24px);
+  }
+   20% {
+     transform: translate(30px, -20px);
+  }
+   27% {
+     transform: translate(38px, -34px);
+  }
+   30% {
+     transform: translate(45px, -30px);
+  }
+   37% {
+     transform: translate(53px, -44px);
+  }
+   40% {
+     transform: translate(60px, -40px);
+  }
+   50% {
+     transform: translate(60px, 0);
+  }
+   57% {
+     transform: translate(53px, -14px);
+  }
+   60% {
+     transform: translate(45px, -10px);
+  }
+   67% {
+     transform: translate(37px, -24px);
+  }
+   70% {
+     transform: translate(30px, -20px);
+  }
+   77% {
+     transform: translate(22px, -34px);
+  }
+   80% {
+     transform: translate(15px, -30px);
+  }
+   87% {
+     transform: translate(7px, -44px);
+  }
+   90% {
+     transform: translate(0, -40px);
+  }
+   100% {
+     transform: translate(0, 0);
+  }
+}
+ @keyframes barUp1 {
+   0% {
+     transform: scale(1, 0.2);
+  }
+   40% {
+     transform: scale(1, 0.2);
+  }
+   50% {
+     transform: scale(1, 1);
+  }
+   90% {
+     transform: scale(1, 1);
+  }
+   100% {
+     transform: scale(1, 0.2);
+  }
+}
+ @keyframes barUp2 {
+   0% {
+     transform: scale(1, 0.4);
+  }
+   40% {
+     transform: scale(1, 0.4);
+  }
+   50% {
+     transform: scale(1, 0.8);
+  }
+   90% {
+     transform: scale(1, 0.8);
+  }
+   100% {
+     transform: scale(1, 0.4);
+  }
+}
+ @keyframes barUp3 {
+   0% {
+     transform: scale(1, 0.6);
+  }
+   100% {
+     transform: scale(1, 0.6);
+  }
+}
+ @keyframes barUp4 {
+   0% {
+     transform: scale(1, 0.8);
+  }
+   40% {
+     transform: scale(1, 0.8);
+  }
+   50% {
+     transform: scale(1, 0.4);
+  }
+   90% {
+     transform: scale(1, 0.4);
+  }
+   100% {
+     transform: scale(1, 0.8);
+  }
+}
+ @keyframes barUp5 {
+   0% {
+     transform: scale(1, 1);
+  }
+   40% {
+     transform: scale(1, 1);
+  }
+   50% {
+     transform: scale(1, 0.2);
+  }
+   90% {
+     transform: scale(1, 0.2);
+  }
+   100% {
+     transform: scale(1, 1);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*nits code*/
+#message p,h1{
+	padding: 0 8%;
+	line-height: 1.5em;
+	font-family: 'Raleway', sans-serif;
+	margin-top: 3vw;
+	text-align: justify;
+	font-size: 1.3vw;
+	letter-spacing: 0.05em;
+}
+
+#message h1 {
+	font-size: 3vw;
+	text-align: center;
+}
+
+@media(orientation:portrait){
+	#message p{
+	font-size: 4.3vw;
+	letter-spacing: 0.05em;
+	text-align: justify;
+}
+#message h1 {
+	font-size: 9vw;
+}
+}
+
+#message hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 11%;
+    margin-left: 11%;
+    margin-top: 3%;
+}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
 #toppage{
 	background-image: url(../images/headImge.jpg);
 	background-repeat: no-repeat;
@@ -15,7 +293,7 @@ body{
 	margin: 0;
 	position: absolute;
 	top: 0;
-	z-index: 5;
+	z-index: -1;
 }
 @font-face{
 	font-family: 'century';
@@ -775,7 +1053,7 @@ ul.tabs li {
   /*   background-color:red; */
   width: 52%;  
   color: black;
-  font-size: 3.2vw;
+  font-size: 3.5vw;
   text-align: justify;
 }
 }
@@ -1028,7 +1306,7 @@ nav a:hover {
 
 
 #mainpage{
-	display: block;
+	display: none;
     position: absolute;
     width: 100%;
     top: 100vh;
@@ -1372,7 +1650,7 @@ input[type=text], select, textarea {
 }
 
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
+button[type=submit] {
   background-color: #000000;
   color: white;
   padding: 12px 20px;
@@ -1382,7 +1660,7 @@ input[type=submit] {
 }
 
 /* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
+button[type=submit]:hover {
   background-color: #45a049;
 }
 
@@ -1463,23 +1741,70 @@ input[type=submit]:hover {
 	}
 }
 
+
 .bulb{
 	position:absolute;
 	right:0px;
-	top:80vh;
+	top:90vh;
 }
-
 .cam{
 	position:absolute;
 	left:0px;
-	top:1600px;
+	top:1200px;
+
 }
 
 .pencil{
 	position:absolute;
 	right:0px;
 	top:-50px;
+
 }
+#pencilimg{
+	height: 30vh;
+	width: 15vw;
+}
+#camimg{
+	width: 15vw;
+	height: 30vh;
+}
+#bulbimg{
+	height: 15vw;
+	width: 15vw;
+}
+
+@media(orientation:portrait){
+	#pencilimg{
+	height: 15vh;
+	width: 20vw;
+}
+.pencil{
+	position:absolute;
+	right:0px;
+	top:0px;
+
+}
+.bulb{
+	position:absolute;
+	right:0px;
+	top:100vh;
+}
+.cam{
+	position:absolute;
+	left:0px;
+	top:1400px;
+
+}
+
+#camimg{
+	width: 25vw;
+	height: 18vh;
+}
+
+
+
+}
+
 .bulb img{
 	transition: all ease 2s;
 }
@@ -1502,23 +1827,15 @@ input[type=submit]:hover {
 }
 
 @media(orientation: portrait){
-	.bulb img{
-		width:15vw;
-		height:15vw;
+	#bulbimg{
+		width:20vw;
+		height:20vw;
 	}
 
-	.cam img{
-		width:20vw;
-		height:15vw;
-	}
-	.pencil img{
-		width:20vw;
-		height:15vw;
-	}
 }
 
 .mithila{
-	background-image: url(/images/mithilaprod.jpg);
+	background-image: url(../images/mithilaprod.jpg);
 
 	background-size: cover;
 	align-self: center;
@@ -1531,29 +1848,50 @@ input[type=submit]:hover {
 
 
 .santy{
-	background-image: url(/images/santybro.jpg);
+	background-image: url(../images/santybro.jpg);
 
 	background-size: cover;
 	align-self: center;
 }
 
 .amit{
-	background-image: url(/images/amitwa.png);
+	background-image: url(../images/amitwa.png);
 
 	background-size: cover;
 	align-self: center;
 }
 .goutam{
-	background-image: url(/images/goutam.JPG);
+	background-image: url(../images/goutam.JPG);
 
 	background-size: cover;
 	align-self: center;
 }
 .gupta{
-	background-image: url(/images/gupta.jpg);
+	background-image: url(../images/gupta.jpg);
 
 	background-size: cover;
 	align-self: center;
 }
 
 
+
+
+
+
+
+
+.fade{
+    width:30vw;
+    height: 5vh;
+    opacity:0;
+}
+
+.elementToFadeInAndOut {
+    animation: fadeInOut 4s linear forwards;
+}
+
+@keyframes fadeInOut {
+ 0% { opacity:0; }
+ 50% { opacity:1; } 
+ 100% { opacity:0; } 
+}
