@@ -2,7 +2,7 @@
   "name": "tedx",
   "version": "1.0.0",
   "description": "It is a website for TEDX orgainsed in NIT SILCAR",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
